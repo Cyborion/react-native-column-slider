@@ -86,6 +86,11 @@ export default class ColumnSlider extends React.PureComponent {
      * The border radius of component.
      */
     borderRadius: PropTypes.number,
+    
+    /**
+     * Tho color of slider shadow.
+     **/
+    shadowColor: PropTypes.string,
   };
 
   static defaultProps = {
@@ -96,6 +101,7 @@ export default class ColumnSlider extends React.PureComponent {
     minimumTrackTintColor: '#fff',
     maximumTrackTintColor: '#eee',
     borderRadius: 0,
+    shdowColor: '#ccc',
   };
 
   constructor(props) {
@@ -209,6 +215,7 @@ export default class ColumnSlider extends React.PureComponent {
       textStyle,
       suffix,
       borderRadius,
+      shadowColor,
     } = this.props;
     const { value } = this.state;
 
@@ -224,7 +231,7 @@ export default class ColumnSlider extends React.PureComponent {
     return (
         <View style={[styles.slider, style]}>
           <Text style={[styles.text, textStyle]}>{value}{suffix}</Text>
-          <View style={[styles.shadow, { backgroundColor: maximumTrackTintColor, width, borderRadius }]}>
+          <View style={[styles.shadow, { backgroundColor: maximumTrackTintColor, width, borderRadius, shadowColor}]}>
             <View style={outerStyle} {...this._panResponder.panHandlers}>
               <View style={innerStyle} />
             </View>
@@ -254,7 +261,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 4,
-    shadowColor: '#ccc',
     elevation: 4,
   },
   outer: {
