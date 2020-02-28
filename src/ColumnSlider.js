@@ -230,7 +230,7 @@ export default class ColumnSlider extends React.PureComponent {
 
     return (
         <View style={[styles.slider, style]}>
-          <Text style={[styles.text, textStyle]}>{value}{suffix}</Text>
+          {/*<Text style={[styles.text, textStyle]}>{value}{suffix}</Text>*/}
           <View style={[styles.shadow, { backgroundColor: maximumTrackTintColor, width, borderRadius, shadowColor}]}>
             <View style={outerStyle} {...this._panResponder.panHandlers}>
               <View style={innerStyle} />
