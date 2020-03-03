@@ -274,7 +274,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   iconContainer: {
-    marginTop: 16,
     alignItems: 'center',
   },
 });
